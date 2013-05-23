@@ -7,7 +7,7 @@
 //
 
 #import "TWAppDelegate.h"
-#import "TWDataManager.h"
+#import "TWIncidentTableViewController.h"
 
 @implementation TWAppDelegate
 
@@ -16,11 +16,15 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    
+    
+    TWIncidentTableViewController *tableViewController = [[TWIncidentTableViewController alloc] initWithNibName:@"TWIncidentTableViewController" bundle:nil];
+    
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:tableViewController];
+    
+    self.window.rootViewController = navController;
+    
     [self.window makeKeyAndVisible];
-    
-    NSArray *incidents = [TWDataManager loadIncidentsFromDisc];
-    NSLog(@"Loaded %d incidents", [incidents count]);
-    
     return YES;
 }
 
