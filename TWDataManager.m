@@ -11,6 +11,22 @@
 
 @implementation TWDataManager
 
++ (NSArray *)parseIncidents:(NSData *)fileContent {
+    // Parse incidents
+    TWIncidentParser *incidentParser = [[TWIncidentParser alloc] init];
+    NSXMLParser *parser = [[NSXMLParser alloc] initWithData:fileContent];
+    [parser setDelegate:incidentParser];
+    [parser parse];
+    return incidentParser.incidentArray;
+}
+
++ (NSArray *) loadIncidentsFromWeb {
+    NSURL *url = [NSURL URLWithString:@"http://www.freiefahrt.info/lmst.de_DE.xml"];
+    NSData *fileContent = [NSData dataWithContentsOfURL:url];
+    
+    return [self parseIncidents:fileContent];
+}
+
 + (NSArray *) loadIncidentsFromDisc {
     // Load file from disc
     NSArray *pathComponents = [NSArray arrayWithObjects:NSHomeDirectory(),
@@ -22,13 +38,7 @@
     NSString *path = [NSString pathWithComponents:pathComponents];
     NSData *fileContent = [NSData dataWithContentsOfFile:path];
     
-    // Parse
-    TWIncidentParser *incidentParser = [[TWIncidentParser alloc] init];
-    NSXMLParser *parser = [[NSXMLParser alloc] initWithData:fileContent];
-    [parser setDelegate:incidentParser];
-    [parser parse];
-    
-    return incidentParser.incidentArray;
+    return [self parseIncidents:fileContent];
 }
 
 @end

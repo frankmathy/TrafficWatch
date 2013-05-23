@@ -10,6 +10,8 @@
 
 @interface TWDataManager : NSObject
 
++ (NSArray *) loadIncidentsFromWeb;
+
 + (NSArray *) loadIncidentsFromDisc;
 
 @end
