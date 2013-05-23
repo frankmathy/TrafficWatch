@@ -21,6 +21,12 @@
 		C84D1942174E4DA70093BC3E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C84D1923174E4DA70093BC3E /* Foundation.framework */; };
 		C84D194A174E4DA70093BC3E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C84D1948174E4DA70093BC3E /* InfoPlist.strings */; };
 		C84D194D174E4DA70093BC3E /* TrafficWatchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C84D194C174E4DA70093BC3E /* TrafficWatchTests.m */; };
+		C84D195C174E4DB70093BC3E /* NSURL+QueryDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = C84D1957174E4DB70093BC3E /* NSURL+QueryDictionary.m */; };
+		C84D195D174E4DB70093BC3E /* TWIncident.m in Sources */ = {isa = PBXBuildFile; fileRef = C84D1959174E4DB70093BC3E /* TWIncident.m */; };
+		C84D195E174E4DB70093BC3E /* TWIncidentParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C84D195B174E4DB70093BC3E /* TWIncidentParser.m */; };
+		C84D1961174E4DD60093BC3E /* TWDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C84D1960174E4DD60093BC3E /* TWDataManager.m */; };
+		C84D1963174E4E100093BC3E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C84D1962174E4E100093BC3E /* CoreLocation.framework */; };
+		C84D1965174E4E150093BC3E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C84D1964174E4E150093BC3E /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +59,16 @@
 		C84D1949174E4DA70093BC3E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C84D194B174E4DA70093BC3E /* TrafficWatchTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrafficWatchTests.h; sourceTree = "<group>"; };
 		C84D194C174E4DA70093BC3E /* TrafficWatchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrafficWatchTests.m; sourceTree = "<group>"; };
+		C84D1956174E4DB70093BC3E /* NSURL+QueryDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+QueryDictionary.h"; sourceTree = "<group>"; };
+		C84D1957174E4DB70093BC3E /* NSURL+QueryDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+QueryDictionary.m"; sourceTree = "<group>"; };
+		C84D1958174E4DB70093BC3E /* TWIncident.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWIncident.h; sourceTree = "<group>"; };
+		C84D1959174E4DB70093BC3E /* TWIncident.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWIncident.m; sourceTree = "<group>"; };
+		C84D195A174E4DB70093BC3E /* TWIncidentParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWIncidentParser.h; sourceTree = "<group>"; };
+		C84D195B174E4DB70093BC3E /* TWIncidentParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWIncidentParser.m; sourceTree = "<group>"; };
+		C84D195F174E4DD60093BC3E /* TWDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWDataManager.h; sourceTree = "<group>"; };
+		C84D1960174E4DD60093BC3E /* TWDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWDataManager.m; sourceTree = "<group>"; };
+		C84D1962174E4E100093BC3E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		C84D1964174E4E150093BC3E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +76,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C84D1965174E4E150093BC3E /* MapKit.framework in Frameworks */,
+				C84D1963174E4E100093BC3E /* CoreLocation.framework in Frameworks */,
 				C84D1922174E4DA70093BC3E /* UIKit.framework in Frameworks */,
 				C84D1924174E4DA70093BC3E /* Foundation.framework in Frameworks */,
 				C84D1926174E4DA70093BC3E /* CoreGraphics.framework in Frameworks */,
@@ -82,6 +100,16 @@
 		C84D1915174E4DA70093BC3E = {
 			isa = PBXGroup;
 			children = (
+				C84D1964174E4E150093BC3E /* MapKit.framework */,
+				C84D1962174E4E100093BC3E /* CoreLocation.framework */,
+				C84D195F174E4DD60093BC3E /* TWDataManager.h */,
+				C84D1960174E4DD60093BC3E /* TWDataManager.m */,
+				C84D1956174E4DB70093BC3E /* NSURL+QueryDictionary.h */,
+				C84D1957174E4DB70093BC3E /* NSURL+QueryDictionary.m */,
+				C84D1958174E4DB70093BC3E /* TWIncident.h */,
+				C84D1959174E4DB70093BC3E /* TWIncident.m */,
+				C84D195A174E4DB70093BC3E /* TWIncidentParser.h */,
+				C84D195B174E4DB70093BC3E /* TWIncidentParser.m */,
 				C84D1927174E4DA70093BC3E /* TrafficWatch */,
 				C84D1945174E4DA70093BC3E /* TrafficWatchTests */,
 				C84D1920174E4DA70093BC3E /* Frameworks */,
@@ -264,6 +292,10 @@
 			files = (
 				C84D192E174E4DA70093BC3E /* main.m in Sources */,
 				C84D1932174E4DA70093BC3E /* TWAppDelegate.m in Sources */,
+				C84D195C174E4DB70093BC3E /* NSURL+QueryDictionary.m in Sources */,
+				C84D195D174E4DB70093BC3E /* TWIncident.m in Sources */,
+				C84D195E174E4DB70093BC3E /* TWIncidentParser.m in Sources */,
+				C84D1961174E4DD60093BC3E /* TWDataManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
