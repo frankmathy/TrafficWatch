@@ -7,6 +7,7 @@
 //
 
 #import "TWIncidentDetailViewController.h"
+#import <MapKit/MapKit.h>
 
 @interface TWIncidentDetailViewController ()
 
@@ -44,6 +45,18 @@
 - (void) updateIncident {
     self.titleLabel.text = self.incident.incidentTitle;
     self.detailLabel.text = self.incident.summary;
+    MKCoordinateRegion mapRegion;
+    mapRegion.center.latitude = self.incident.latitude;
+    mapRegion.center.longitude = self.incident.longitude;
+    mapRegion.span.latitudeDelta = 0.2;
+    mapRegion.span.longitudeDelta = 0.2;
+    [self.mapView setRegion:mapRegion];
+    
+    if(self.annotationPoint == nil) {
+        self.annotationPoint = [[MKPointAnnotation alloc] init];
+        [self.mapView addAnnotation:self.annotationPoint];
+    }
+    self.annotationPoint.coordinate = mapRegion.center;
 }
 
 - (void)didReceiveMemoryWarning
