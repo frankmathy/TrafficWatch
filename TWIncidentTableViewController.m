@@ -74,7 +74,9 @@
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
-    cell.textLabel.text = [(TWIncident *) [self.incidents objectAtIndex:indexPath.row] title];
+    TWIncident *incident = [self.incidents objectAtIndex:indexPath.row];
+    cell.textLabel.text = incident.title;
+    cell.imageView.image = incident.roadsign;
     
     return cell;
 }
