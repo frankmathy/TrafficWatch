@@ -17,6 +17,14 @@
 
 @implementation TWIncidentTableViewController
 
+@synthesize incidents = _incidents;
+
+- (void) setIncidents:(NSArray *)newIncidents {
+    _incidents = newIncidents;
+    // Call GUI update in main thread
+    [self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
+}
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];

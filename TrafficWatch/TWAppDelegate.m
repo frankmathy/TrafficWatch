@@ -12,6 +12,13 @@
 
 @implementation TWAppDelegate
 
+// Download data and pass to table controller
+- (void) downloadAndParse {
+    NSArray *incidents = [TWDataManager loadIncidentsFromDisc];
+    self.tableController.incidents = incidents;
+    NSLog(@"Loaded %d incidents", [incidents count]);
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -19,13 +26,19 @@
     self.window.backgroundColor = [UIColor whiteColor];
     
     
-    TWIncidentTableViewController *tableViewController = [[TWIncidentTableViewController alloc] initWithNibName:@"TWIncidentTableViewController" bundle:nil];
-    tableViewController.incidents = [TWDataManager loadIncidentsFromDisc];
-    NSLog(@"Loaded %d incidents", [tableViewController.incidents count]);
+    self.tableController = [[TWIncidentTableViewController alloc] initWithNibName:@"TWIncidentTableViewController" bundle:nil];
     
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:tableViewController];
+    // Load incidents
+    //tableViewController.incidents = [TWDataManager loadIncidentsFromDisc];
+    // NSLog(@"Loaded %d incidents", [tableViewController.incidents count]);
+    
+    // Load incidents in background
+    [self performSelectorInBackground:@selector(downloadAndParse) withObject:nil];
+    
+    
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:self.tableController];
     TWIncidentDetailViewController *detailViewController = [[TWIncidentDetailViewController alloc] initWithNibName:@"TWIncidentDetailViewController" bundle:nil];
-    tableViewController.detailController = detailViewController;
+    self.tableController.detailController = detailViewController;
 
     // For universal app
     UIDevice *currentDevice = [UIDevice currentDevice];
