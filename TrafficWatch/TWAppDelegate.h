@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "TWIncidentTableViewController.h"
+#include <CoreLocation/CoreLocation.h>
 
-@interface TWAppDelegate : UIResponder <UIApplicationDelegate>
+@interface TWAppDelegate : UIResponder <UIApplicationDelegate, CLLocationManagerDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) TWIncidentTableViewController *tableController;
+
+@property (strong, nonatomic) CLLocationManager *manager;
+@property (strong, nonatomic) CLLocation *currentLocation;
 
 @end

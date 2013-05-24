@@ -19,12 +19,40 @@
     NSLog(@"Loaded %d incidents", [incidents count]);
 }
 
+- (void) locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    CLLocation *position = [locations objectAtIndex:0];
+    CLLocationDistance distance = [self.currentLocation distanceFromLocation:position];
+    if(self.currentLocation == nil || distance > 10) {
+        // Save location
+        self.currentLocation = position;
+        
+        // Sort by location
+        NSArray *unsortedIncidents = self.tableController.incidents;
+        NSArray *sortedArray = [unsortedIncidents sortedArrayUsingComparator:^NSComparisonResult(TWIncident* obj1, TWIncident* obj2) {
+            CLLocationDistance dist1 = [self.currentLocation distanceFromLocation:obj1.location];
+            CLLocationDistance dist2 = [self.currentLocation distanceFromLocation:obj2.location];
+            if(dist1<dist2) {
+                return NSOrderedAscending;
+            } else if(dist1>dist2) {
+                return NSOrderedDescending;
+            } else {
+                return NSOrderedSame;
+            }
+        }];
+        self.tableController.incidents = sortedArray;
+    }
+    NSLog(@"Location changed: %@", locations);
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     
+    self.manager = [[CLLocationManager alloc] init];
+    self.manager.delegate = self;
+    [self.manager startUpdatingLocation];
     
     self.tableController = [[TWIncidentTableViewController alloc] initWithNibName:@"TWIncidentTableViewController" bundle:nil];
     
