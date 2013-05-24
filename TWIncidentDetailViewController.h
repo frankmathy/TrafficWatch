@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TWIncident.h"
 
 @interface TWIncidentDetailViewController : UIViewController
 
 @property (nonatomic, strong) IBOutlet UILabel *titleLabel;
+@property (nonatomic, strong) TWIncident *incident;
 
 @end

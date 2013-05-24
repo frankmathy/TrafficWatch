@@ -118,7 +118,8 @@
     if(currentDevice.userInterfaceIdiom == UIUserInterfaceIdiomPhone) {
         [self.navigationController pushViewController:self.detailController animated:YES];
     }
-    self.detailController.titleLabel.text = [(TWIncident *) [self.incidents objectAtIndex:indexPath.row] title];
+    self.detailController.incident = [self.incidents objectAtIndex:indexPath.row];
+    // self.detailController.titleLabel.text = [(TWIncident *) [self.incidents objectAtIndex:indexPath.row] title];
 }
 
 @end
