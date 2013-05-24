@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TWIncidentDetailViewController.h"     
 
 @interface TWIncidentTableViewController : UITableViewController
 
-@property NSArray *incidents;
+@property (nonatomic, strong) NSArray *incidents;
+@property (nonatomic, strong) TWIncidentDetailViewController *detailController;
 
 @end

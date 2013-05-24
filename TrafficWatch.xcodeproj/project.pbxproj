@@ -27,6 +27,10 @@
 		C84D1961174E4DD60093BC3E /* TWDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C84D1960174E4DD60093BC3E /* TWDataManager.m */; };
 		C84D1963174E4E100093BC3E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C84D1962174E4E100093BC3E /* CoreLocation.framework */; };
 		C84D1965174E4E150093BC3E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C84D1964174E4E150093BC3E /* MapKit.framework */; };
+		C84D1969174E5AC60093BC3E /* TWIncidentTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C84D1967174E5AC60093BC3E /* TWIncidentTableViewController.m */; };
+		C84D196A174E5AC60093BC3E /* TWIncidentTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C84D1968174E5AC60093BC3E /* TWIncidentTableViewController.xib */; };
+		C84D1978174E5E4E0093BC3E /* TWIncidentDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C84D1976174E5E4E0093BC3E /* TWIncidentDetailViewController.m */; };
+		C84D1979174E5E4E0093BC3E /* TWIncidentDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C84D1977174E5E4E0093BC3E /* TWIncidentDetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +73,12 @@
 		C84D1960174E4DD60093BC3E /* TWDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWDataManager.m; sourceTree = "<group>"; };
 		C84D1962174E4E100093BC3E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		C84D1964174E4E150093BC3E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		C84D1966174E5AC60093BC3E /* TWIncidentTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWIncidentTableViewController.h; sourceTree = "<group>"; };
+		C84D1967174E5AC60093BC3E /* TWIncidentTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWIncidentTableViewController.m; sourceTree = "<group>"; };
+		C84D1968174E5AC60093BC3E /* TWIncidentTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TWIncidentTableViewController.xib; sourceTree = "<group>"; };
+		C84D1975174E5E4E0093BC3E /* TWIncidentDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWIncidentDetailViewController.h; sourceTree = "<group>"; };
+		C84D1976174E5E4E0093BC3E /* TWIncidentDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWIncidentDetailViewController.m; sourceTree = "<group>"; };
+		C84D1977174E5E4E0093BC3E /* TWIncidentDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TWIncidentDetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +110,12 @@
 		C84D1915174E4DA70093BC3E = {
 			isa = PBXGroup;
 			children = (
+				C84D1966174E5AC60093BC3E /* TWIncidentTableViewController.h */,
+				C84D1975174E5E4E0093BC3E /* TWIncidentDetailViewController.h */,
+				C84D1976174E5E4E0093BC3E /* TWIncidentDetailViewController.m */,
+				C84D1977174E5E4E0093BC3E /* TWIncidentDetailViewController.xib */,
+				C84D1967174E5AC60093BC3E /* TWIncidentTableViewController.m */,
+				C84D1968174E5AC60093BC3E /* TWIncidentTableViewController.xib */,
 				C84D1964174E4E150093BC3E /* MapKit.framework */,
 				C84D1962174E4E100093BC3E /* CoreLocation.framework */,
 				C84D195F174E4DD60093BC3E /* TWDataManager.h */,
@@ -256,6 +272,8 @@
 				C84D1934174E4DA70093BC3E /* Default.png in Resources */,
 				C84D1936174E4DA70093BC3E /* Default@2x.png in Resources */,
 				C84D1938174E4DA70093BC3E /* Default-568h@2x.png in Resources */,
+				C84D196A174E5AC60093BC3E /* TWIncidentTableViewController.xib in Resources */,
+				C84D1979174E5E4E0093BC3E /* TWIncidentDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +314,8 @@
 				C84D195D174E4DB70093BC3E /* TWIncident.m in Sources */,
 				C84D195E174E4DB70093BC3E /* TWIncidentParser.m in Sources */,
 				C84D1961174E4DD60093BC3E /* TWDataManager.m in Sources */,
+				C84D1969174E5AC60093BC3E /* TWIncidentTableViewController.m in Sources */,
+				C84D1978174E5E4E0093BC3E /* TWIncidentDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,7 +419,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TrafficWatch/TrafficWatch-Prefix.pch";
 				INFOPLIST_FILE = "TrafficWatch/TrafficWatch-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -410,7 +432,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TrafficWatch/TrafficWatch-Prefix.pch";
 				INFOPLIST_FILE = "TrafficWatch/TrafficWatch-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

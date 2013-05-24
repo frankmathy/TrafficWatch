@@ -7,9 +7,9 @@
 //
 
 #import "TWIncidentTableViewController.h"
-#include "TWDataManager.h"
-#include "TWIncident.h"
-#include "TWIncidentDetailViewController.h"
+#import "TWDataManager.h"
+#import "TWIncident.h"
+#import "TWIncidentDetailViewController.h"
 
 @interface TWIncidentTableViewController ()
 
@@ -30,10 +30,6 @@
 {
     [super viewDidLoad];
     
-    self.incidents = [TWDataManager loadIncidentsFromDisc];
-    NSLog(@"Loaded %d incidents", [self.incidents count]);
-
-
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -118,9 +114,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    TWIncidentDetailViewController *detailViewController = [[TWIncidentDetailViewController alloc] initWithNibName:@"TWIncidentDetailViewController" bundle:nil];
-    [self.navigationController pushViewController:detailViewController animated:YES];
-    detailViewController.titleLabel.text = [(TWIncident *) [self.incidents objectAtIndex:indexPath.row] title];
+    UIDevice *currentDevice = [UIDevice currentDevice];
+    if(currentDevice.userInterfaceIdiom == UIUserInterfaceIdiomPhone) {
+        [self.navigationController pushViewController:self.detailController animated:YES];
+    }
+    self.detailController.titleLabel.text = [(TWIncident *) [self.incidents objectAtIndex:indexPath.row] title];
 }
 
 @end

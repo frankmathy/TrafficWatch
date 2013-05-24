@@ -7,7 +7,7 @@
 //
 
 #import "TWDataManager.h"
-#include "TWIncidentParser.h"
+#import "TWIncidentParser.h"
 
 @implementation TWDataManager
 

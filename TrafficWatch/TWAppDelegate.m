@@ -7,6 +7,7 @@
 //
 
 #import "TWAppDelegate.h"
+#import "TWDataManager.h"
 #import "TWIncidentTableViewController.h"
 
 @implementation TWAppDelegate
@@ -19,10 +20,26 @@
     
     
     TWIncidentTableViewController *tableViewController = [[TWIncidentTableViewController alloc] initWithNibName:@"TWIncidentTableViewController" bundle:nil];
+    tableViewController.incidents = [TWDataManager loadIncidentsFromDisc];
+    NSLog(@"Loaded %d incidents", [tableViewController.incidents count]);
     
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:tableViewController];
+    TWIncidentDetailViewController *detailViewController = [[TWIncidentDetailViewController alloc] initWithNibName:@"TWIncidentDetailViewController" bundle:nil];
+    tableViewController.detailController = detailViewController;
+
+    // For universal app
+    UIDevice *currentDevice = [UIDevice currentDevice];
+    if(currentDevice.userInterfaceIdiom == UIUserInterfaceIdiomPhone) {
+        // iPhone Kram
+        self.window.rootViewController = navController;
+    } else {
+        // iPad Implementierung
+        UISplitViewController *splitController = [[UISplitViewController alloc] init];
+        NSArray *controllerArray = [NSArray arrayWithObjects:navController, detailViewController, nil];
+        splitController.viewControllers = controllerArray;
+        self.window.rootViewController = splitController;
+    }
     
-    self.window.rootViewController = navController;
     
     [self.window makeKeyAndVisible];
     return YES;
