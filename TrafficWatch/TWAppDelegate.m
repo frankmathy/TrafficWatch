@@ -14,7 +14,8 @@
 
 // Download data and pass to table controller
 - (void) downloadAndParse {
-    NSArray *incidents = [TWDataManager loadIncidentsFromDisc];
+    NSArray *incidents = [TWDataManager loadIncidentsFromWeb];
+    // NSArray *incidents = [TWDataManager loadIncidentsFromDisc];
     self.tableController.incidents = incidents;
     NSLog(@"Loaded %d incidents", [incidents count]);
 }
@@ -41,7 +42,7 @@
         }];
         self.tableController.incidents = sortedArray;
     }
-    NSLog(@"Location changed: %@", locations);
+    // NSLog(@"Location changed: %@", locations);
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions

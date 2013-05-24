@@ -43,6 +43,7 @@
 
 - (void) updateIncident {
     self.titleLabel.text = self.incident.incidentTitle;
+    self.detailLabel.text = self.incident.summary;
 }
 
 - (void)didReceiveMemoryWarning
