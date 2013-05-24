@@ -44,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		851E791C174FCA1700BEF9AA /* Wiesbaden.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Wiesbaden.gpx; sourceTree = "<group>"; };
 		C84D191E174E4DA70093BC3E /* TrafficWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrafficWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C84D1921174E4DA70093BC3E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C84D1923174E4DA70093BC3E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -110,6 +111,7 @@
 		C84D1915174E4DA70093BC3E = {
 			isa = PBXGroup;
 			children = (
+				851E791C174FCA1700BEF9AA /* Wiesbaden.gpx */,
 				C84D1966174E5AC60093BC3E /* TWIncidentTableViewController.h */,
 				C84D1967174E5AC60093BC3E /* TWIncidentTableViewController.m */,
 				C84D1968174E5AC60093BC3E /* TWIncidentTableViewController.xib */,
@@ -492,6 +494,7 @@
 				C84D1952174E4DA70093BC3E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C84D1953174E4DA70093BC3E /* Build configuration list for PBXNativeTarget "TrafficWatchTests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +503,7 @@
 				C84D1955174E4DA70093BC3E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
